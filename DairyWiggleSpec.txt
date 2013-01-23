@@ -1,0 +1,35 @@
+Congratulations! You are now the manager of everyone’s favorite new milkshakes-only restaurant in town, the Dairy Wiggle. (Haven’t heard about the Dairy Wiggle? Well maybe you have heard about the world-famous Dairy Wiggle line dance or related line dancing competitions.) Your challenge is to design a system in Java to simulate 6 months of the work and pay of your Employees.
+
+Simulator
+The Simulator class is responsible for managing all of the Employees by printing out a report on each of their activities on a weekly basis along with the amount of money they have been paid so far this year. Each Simulator should have two instances of each type of Employee. Once every month, one Employee should be selected at random to win their monthly line dancing competition, earning a bonus check, which should be between $100 and $200.
+
+Employee
+effectivenessMultiplier
+	the total amount the employee makes every week is the baseWeeklySalary multiplied by this number. This number should be reset to 1 at the start of every week.
+baseWeeklySalary
+	the baseline figure that the employee should make every week
+totalPaymentToDate
+	a running total of how much the employee has been paid
+work()
+earnPaycheck()
+earnBonus(amount)
+
+TastebudStylist
+The Dairy Wiggle doesn’t have chefs or cooks. They have TastebudStylists. These folks are the masters responsible for crafting the milkshakes, and typically earn the most money of all employees. TastebudStylists work() by doing one thing and one thing alone: making milkshakes.
+makeShake()
+	Increase the effectivenessMultiplier by +0.1... unless the TastebudStylist decides to sample the product (which happens 10% of the time). In that case, immediately reset the effectivenessMultiplier to 1.
+
+Moover
+Moovers are the waiters at the Dairy Wiggle. (Although the restaurant only serves milkshakes, you are expected to sit down, place your order, receive your shake, and tip your waiter. Like civilized folk.) Moovers work() by taking an order and then delivering it.
+takeOrder()
+	Increase the effectivenessMultiplier by +0.05... unless the Moover forgets the order (which happens 20% of the time). In that case, decrease the effectivenessMultiplier by -0.1. 
+deliverShake()
+	Increase the effectivenessMultiplier by +0.03... unless the Moover trips and spills the shake (which happens 5% of the time). In that case, decrease the effectivenessMultiplier by -0.1
+
+Shakers
+Why use a machine to blend your dairy when you can use a professional? Shakers are critical to the restaurant, however they are not very well paid. Shakers work() by doing just one thing. They get into a groove over the course of a week and get better and better at it -- and they never ever fail...
+shake()
+	Increase the effectivenessMultiplier by +0.02
+	
+	- go to work everyday
+	- get paid once a week
