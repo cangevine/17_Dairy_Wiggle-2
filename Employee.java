@@ -27,24 +27,30 @@ public abstract class Employee{
 	public void earnPaycheck() {
 		totalPaymentToDate += (baseWeekSalary * effectivenessMultiplier);
 	}
+	// @BC: Careful here -- the specs required that earnBonus take a parameter. This way, each time a bonus happens it could be a
+	//		random amount (and not a fixed bonus per employee)
 	public void earnBonus() {
 		totalPaymentToDate += bonus;
 	}
 	public double getEM(){
 		return effectivenessMultiplier;
 	}
+	// @BC: Looking at the way this is used in subclasses, it seems as if it would be easier to rethink this mutator and instead
+	//		you could have increase and decrease EM mutator methods
 	public void setEM(double em){
 		effectivenessMultiplier = em;
 	}	 
 	public int getDW(){
 		return daysWorked;
 	} 
+	// @BC: Nice idea here
 	public void setDW(){
 		daysWorked++;
 		if (daysWorked % 7 == 0){
 			setEM(1);
 		}
 	}
+	// @BC: Nice thought to carry this over from the last project
 	public boolean calcChances(int pct){
 		Random r = new Random();
 		int myNum = r.nextInt(100);

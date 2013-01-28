@@ -25,10 +25,12 @@ public class Simulator{
 			Employee i_s = new Shaker(); // creates 2 Shakers
 			employees[i] = i_s;
 		}
+		// @BC: A lot of for loops, but the comments add clarity to a nice implementation here
 		for(int year=0; year<1; year++){
 			for(int month=0; month<6; month++){ // 6 month simulation
 				for(int week=0; week<4; week++){ // in this simulation a month is 4 weeks
 					for(int day=0; day<7; day++){ // employees work 7 days a week
+													// @BC: Ouch. What a tough boss!
 						for(int i = 0; i < employees.length; i++){
 							employees[i].work();
 						}	
@@ -42,6 +44,7 @@ public class Simulator{
 				Random r = new Random();
 				int j = r.nextInt(6);
 				employees[j].earnBonus();
+				// @BC: Nice attention to detail
 				if(monthNum == 1){
 					System.out.println(employees[j] + " I won the danceoff in the " + monthNum + "st month!" );
 				} else if(monthNum == 2){
@@ -55,6 +58,7 @@ public class Simulator{
 		}
 		printSummary();
 	}
+	// @BC: The report is a bit hard to read. Not taking off for it, but definitely an opportunity for improvement next time around.
 	public void printReport(){
 		String a = "";
 		for(int i = 0; i < employees.length; i++){
